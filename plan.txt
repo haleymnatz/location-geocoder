@@ -1,0 +1,11 @@
+TESTS!!!
+
+1. Create location model
+ > Properties: Address, latitude, longitude
+2. Create location DB table
+3. Create index page (routes) with Location controller
+4. Add location form
+5. Incorporate Google geocoder API
+6. Add CRUD functionality
+7. Add table to page
+8. Styling

@@ -2,16 +2,8 @@ TESTS!!!
 
 1. Create location model
  > Properties: Address, latitude, longitude
-2. Create location DB table
 3. Create index page (routes) with Location controller
 4. Add location form
-5. Incorporate Google geocoder API
+5. Validate zip code as containing 0-9 only
 6. Add CRUD functionality
-7. Add table to page
-8. Styling
-
---a. User enters address in form which sends to locations#Create
---b. Create action sends address param to Httparty which makes get request to API
-c. Necessary info is retrieved from response json using helper class
-d. Location.new(response json stuffs)
-e. Location.save
+7. Styling

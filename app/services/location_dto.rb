@@ -11,5 +11,3 @@ class LocationDto
     obj.include?(key) ? obj[key] : default
   end
 end
-
-# IMPORTANT: call this on response["results"][0]

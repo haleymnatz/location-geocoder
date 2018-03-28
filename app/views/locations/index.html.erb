@@ -1,1 +1,11 @@
 <h1>Location Geocoder</h1>
+
+<%= form_for @location do |f| %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.submit "Get Location" %>
+<% end %>
+
+<% @locations.each do |location| %>
+  <span><%= location.address %> --- <%=location.latitude%> --- <%= location.longitude %></span>
+<% end %>

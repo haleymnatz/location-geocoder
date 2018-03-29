@@ -1,0 +1,34 @@
+@import "bootstrap";
+
+// General
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: inline-block;
+}
+
+h1 {
+  margin: 50px auto;
+}
+
+p {
+  margin-bottom: 50px;
+}
+
+#notice {
+  color: #ef0216;
+  font-weight: 700;
+  margin-top: 50px;
+}
+
+// Form
+
+.form-container {
+  display: inline-block;
+}
+
+// Table

@@ -1,37 +1,63 @@
-<h1>Location Geocoder</h1>
+<body>
+  <container>
+    <h1>Location Geocoder</h1>
+    <p>
+      Enter an address to find the latitude and longitude using
+      the <a href="https://developers.google.com/maps/documentation/geocoding/intro">
+      Google Maps Geocoding API</a>.
+    </p>
+    <container class="form-container">
+      <%= form_for @location do |f| %>
+        <%= f.fields_for :address do |a| %>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col">
+                <%= a.text_field :street_address, required: true, class: "form-control", placeholder: "Street Address" %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col">
+                <%= a.text_field :city, required: true, class: "form-control", placeholder: "City" %>
+              </div>
+              <div class="col">
+                <%= a.text_field :state, maxlength: 2, required: true, class: "form-control", placeholder: "State" %>
+              </div>
+              <div class="col">
+                <%= a.text_field :zip_code, maxlength: 5, required: true, class: "form-control", placeholder: "Zip" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%= f.submit "Get Location", class: 'btn btn-outline-primary' %>
+      <% end %>
+    </container>
 
-<%= form_for @location, url: locations_path do |f| %>
-  <%= f.fields_for :address do |a| %>
-    <%= a.label :street_address %>
-    <%= a.text_field :street_address, required: true %>
-    <br />
-    <%= a.label :city %>
-    <%= a.text_field :city, required: true %>
-    <%= a.label :state %>
-    <%= a.text_field :state, maxlength: 2, required: true %>
-    <%= a.label :zip_code %>
-    <%= a.text_field :zip_code, maxlength: 5, required: true %>
-  <% end %>
-  <%= f.submit "Get Location" %>
-<% end %>
+    <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
-
-<br /></br />
-<table>
-  <tr>
-    <th>Address</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-  </tr>
-  <% @locations.each do |location| %>
-    <tr>
-      <td><%= location.address %></td>
-      <td><%= location.latitude %></td>
-      <td><%= location.longitude %></td>
-      <td><%= button_to "Delete Location", location_path(location),
-              method: "delete", data: { confirm: 'Are you sure?'}%>
-      </td>
-    </tr>
-  <% end %>
-</table>
+    <br /><br />
+    <table class ="table">
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @locations.each do |location| %>
+          <tr>
+            <td><%= location.address %></td>
+            <td><%= location.latitude %></td>
+            <td><%= location.longitude %></td>
+            <td><%= button_to "Delete", location_path(location),
+                    method: "delete", class: 'btn btn-outline-danger btn-sm', data: { confirm: 'Are you sure?'} %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </container>
+</body>

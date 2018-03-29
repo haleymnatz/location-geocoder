@@ -33,6 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # httparty - simplifies http requests in ruby
 gem 'httparty'
 
+# bootstrap for styling
+gem 'bootstrap', '~> 4.0.0'
+# sprockets-rails for bootstrap
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

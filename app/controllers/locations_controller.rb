@@ -13,11 +13,11 @@ class LocationsController < ApplicationController
       Please try another address."
     else
       location_dto = LocationDto.new(api_response["results"][0])
-      @location = Location.create(
-                                  address: location_dto.address,
-                                  latitude: location_dto.latitude,
-                                  longitude: location_dto.longitude
-                                 )
+      Location.create(
+                      address: location_dto.address,
+                      latitude: location_dto.latitude,
+                      longitude: location_dto.longitude
+                     )
     end
     redirect_to root_path
   end
@@ -38,12 +38,5 @@ class LocationsController < ApplicationController
     firsts = params[:location][:address]
     "#{firsts[:street_address]}, #{firsts[:city]},
     #{firsts[:state]}, #{firsts[:zip_code]}"
-  end
-
-  def flash_errors(api_response)
-    if response["results"].empty?
-      flash.now[:error] = "There was a problem with the address you submitted.
-      Please try another address."
-    end
   end
 end

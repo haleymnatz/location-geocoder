@@ -1,3 +1,4 @@
+# DTO = data transfer object
 class LocationDto
   attr_accessor :address, :latitude, :longitude
 

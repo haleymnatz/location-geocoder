@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
   def create
     # Use httparty class to make api call to geocoding api
     api_response = api_call
-
+    puts "called controller"
     if api_response["results"].empty?
       flash[:notice] = "No results were found for the address you submitted.
       Please try another address."

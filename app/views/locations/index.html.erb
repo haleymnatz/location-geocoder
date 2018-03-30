@@ -1,13 +1,13 @@
 <body>
   <container>
-    <h1 onclick="clickTest()">Location Geocoder</h1>
+    <h1>Location Geocoder</h1>
     <p>
       Enter an address to find the latitude and longitude using
       the <a href="https://developers.google.com/maps/documentation/geocoding/intro">
       Google Maps Geocoding API</a>.
     </p>
     <container class="form-container">
-      <%= form_for @location, html: { name: 'address_form', onsubmit: "event.preventDefault(); validateZip()" } do |f| %>
+      <%= form_for @location, html: { name: 'address_form' } do |f| %>
         <%= f.fields_for :address do |a| %>
           <div class="form-group">
             <div class="form-row">

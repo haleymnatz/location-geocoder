@@ -1,13 +1,13 @@
 <body>
   <container>
-    <h1>Location Geocoder</h1>
+    <h1 onclick="clickTest()">Location Geocoder</h1>
     <p>
       Enter an address to find the latitude and longitude using
       the <a href="https://developers.google.com/maps/documentation/geocoding/intro">
       Google Maps Geocoding API</a>.
     </p>
     <container class="form-container">
-      <%= form_for @location do |f| %>
+      <%= form_for @location, html: { name: 'address_form', onsubmit: "event.preventDefault(); validateZip()" } do |f| %>
         <%= f.fields_for :address do |a| %>
           <div class="form-group">
             <div class="form-row">
@@ -25,7 +25,7 @@
                 <%= a.text_field :state, maxlength: 2, required: true, class: "form-control", placeholder: "State" %>
               </div>
               <div class="col">
-                <%= a.text_field :zip_code, maxlength: 5, required: true, class: "form-control", placeholder: "Zip" %>
+                <%= a.text_field :zip_code, maxlength: 5, required: true, class: "form-control", placeholder: "Zip", id: 'zip_field' %>
               </div>
             </div>
           </div>

@@ -6,10 +6,12 @@ class LocationsController < ApplicationController
   end
 
   def create
+    # Use httparty to make api call
     location_search = GeocodingAPI.new(address_formatter)
     api_response = location_search.get_location
+
     if api_response["results"].empty?
-      flash[:notice] = "There was a problem with the address you submitted.
+      flash[:notice] = "No results were found for the address you submitted.
       Please try another address."
     else
       location_dto = LocationDto.new(api_response["results"][0])
@@ -30,13 +32,9 @@ class LocationsController < ApplicationController
 
   private
 
-  def location_params
-    params.require(:location).permit(:address, :latitude, :longitude)
-  end
-
   def address_formatter
-    firsts = params[:location][:address]
-    "#{firsts[:street_address]}, #{firsts[:city]},
-    #{firsts[:state]}, #{firsts[:zip_code]}"
+    shared = params[:location][:address]
+    "#{shared[:street_address]}, #{shared[:city]},
+    #{shared[:state]}, #{shared[:zip_code]}"
   end
 end

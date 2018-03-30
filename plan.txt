@@ -1,9 +1,0 @@
-TESTS!!!
-
-1. Create location model
- > Properties: Address, latitude, longitude
-3. Create index page (routes) with Location controller
-4. Add location form
-5. Validate zip code as containing 0-9 only
-6. Add CRUD functionality
-7. Styling

@@ -6,9 +6,8 @@ class LocationsController < ApplicationController
   end
 
   def create
-    # Use httparty to make api call
-    location_search = GeocodingAPI.new(address_formatter)
-    api_response = location_search.get_location
+    # Use httparty class to make api call to geocoding api
+    api_response = api_call
 
     if api_response["results"].empty?
       flash[:notice] = "No results were found for the address you submitted.
@@ -31,6 +30,12 @@ class LocationsController < ApplicationController
   end
 
   private
+
+  def api_call
+    # Use httparty class to make api call
+    location_search = GeocodingAPI.new(address_formatter)
+    api_response = location_search.get_location
+  end
 
   def address_formatter
     shared = params[:location][:address]

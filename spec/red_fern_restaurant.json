@@ -1,0 +1,92 @@
+{
+    "results": [
+        {
+            "address_components": [
+                {
+                    "long_name": "283",
+                    "short_name": "283",
+                    "types": [
+                        "street_number"
+                    ]
+                },
+                {
+                    "long_name": "Oxford Street",
+                    "short_name": "Oxford St",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Park Avenue",
+                    "short_name": "Park Avenue",
+                    "types": [
+                        "neighborhood",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Rochester",
+                    "short_name": "Rochester",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Monroe County",
+                    "short_name": "Monroe County",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "New York",
+                    "short_name": "NY",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "14607",
+                    "short_name": "14607",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "283 Oxford St, Rochester, NY 14607, USA",
+            "geometry": {
+                "location": {
+                    "lat": 43.149757,
+                    "lng": -77.586551
+                },
+                "location_type": "ROOFTOP",
+                "viewport": {
+                    "northeast": {
+                        "lat": 43.1511059802915,
+                        "lng": -77.58520201970849
+                    },
+                    "southwest": {
+                        "lat": 43.1484080197085,
+                        "lng": -77.5878999802915
+                    }
+                }
+            },
+            "place_id": "ChIJLXXqHgu11okR0L3z7NhzUyY",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "status": "OK"
+}

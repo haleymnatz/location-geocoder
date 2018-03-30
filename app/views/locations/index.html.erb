@@ -52,7 +52,7 @@
             <td><%= location.address %></td>
             <td><%= location.latitude %></td>
             <td><%= location.longitude %></td>
-            <td><%= button_to "Delete", location_path(location),
+            <td><%= link_to "Delete", location_path(location),
                     method: "delete",data: { confirm: 'Are you sure?'}, class: 'btn btn-outline-danger btn-sm' %>
             </td>
           </tr>
